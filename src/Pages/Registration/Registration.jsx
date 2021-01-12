@@ -2,19 +2,28 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Registration = (props) => {
+
+    function Login_Backend(){
+        console.log('Click');
+        var x = document.getElementById('name').value
+        var y = document.getElementById('password').value
+        console.log(x);
+        console.log(y);
+    }
+
     return(
         <div className="Registration_main">
         <div className="Textbox_main">
             <div className="textbox_submain">
-                <label htmlFor=""></label>
-                <input type="text"/>
-                <label htmlFor=""></label>
-                <input type="text"/>
-                <label htmlFor=""></label>
-                <input type="text"/>
+            <label for="name">Name</label>
+            <input type="text" id="name"/>
+            <label for="email">E-mail</label>
+            <input type="text" id="email"/>
+            <label for="password">Password</label>
+            <input type="text" id="password"/>
             </div>
             <button className="textbox_button">
-
+                Registration
             </button>
             <Link to = "/">
                     <button className="Back">Back</button>
