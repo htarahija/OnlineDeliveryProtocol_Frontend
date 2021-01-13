@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-const apiUrl = 'http://localhost:3000';
-
+import './Login.css'; 
 // Postavke
+const apiUrl = 'http://localhost:3000';
 
 axios.defaults.withCredentials = true;
 axios.interceptors.request.use(
@@ -61,23 +61,31 @@ const Login =  (props) => {
         <div className="Login_main">
             <div className="Textbox_main">
                 <div className="textbox_submain">
-                    <label htmlFor="email">E-mail</label>
-                    <input type="email" id="email" />
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" />
+                    <div className="mail">
+                        <label htmlFor="email">E-mail</label>
+                        <input type="email" id="email" />
+                    </div>
+                    <div className="pw">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" />
+                    </div>
                 </div>
-                <button className="textbox_button" onClick={Login_Backend}>
-                    Login
-                </button>
-                <button className="Log_out" onClick={log__out}>Log Out</button>
-                <Link to="/">
-                    <button className="Back">Back</button>
-                </Link>
+                <div className="Buttoni">
+                    <button className="textbox_button" onClick={Login_Backend}>
+                        Login
+                    </button>
+                    <button className="Log_out" onClick={log__out}>Log Out</button>
+                    <Link to="/">
+                        <button className="Backa">Back</button>
+                    </Link>
+                </div>
             </div>
             <div className="Text_main">
                 <h2 className="sdp">SOFTVERSKI DIZAJN PROTOKOLA</h2>
-                <p className="etf">Faculty of Electrical Engeneering</p>
-                <p className="dot">Department of Telecommunications</p>
+                <div className="instituions">
+                    <p className="etf">Faculty of Electrical Engeneering</p>
+                    <p className="dot">Department of Telecommunications</p>
+                </div>
             </div>
         </div>
     );

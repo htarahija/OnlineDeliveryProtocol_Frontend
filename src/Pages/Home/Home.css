@@ -19,18 +19,18 @@
     margin-right: 20px;
     background-color: #16A085;
     border: none;
-    padding: 15px 32px;
+    padding: 14px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    color: white;
+    color: #FAFAFA;
     transition-duration: 0.4s;
     border-radius: 8px;
 }
 .Registration_Button{
     background-color: none;
-    border: 1px solid #16A085;    padding: 15px 32px;
+    border: 1px solid #16A085;
     color:  #16A085;
     padding: 14px 32px;
     text-align: center;
@@ -67,19 +67,19 @@
     margin-left: 20px;
 }
 
-
 .Registration_Button:hover {
     background-color: #16A085; /* Green */
-    color:white;
+    color:#FAFAFA;
     border-radius: 8px;
-  }
+    padding: 14px 32px;
+
+}
 
 .Login_Button:hover {
-    padding: 14px 32px;
-    background-color: white;
+    background-color:#FAFAFA;
     color: #16A085;
     border: 1px solid #16A085;    
-    padding: 15px 32px;
+    padding: 14px 32px;
     border-radius: 8px;
 }
   
