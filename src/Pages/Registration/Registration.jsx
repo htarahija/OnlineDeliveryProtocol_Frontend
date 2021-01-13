@@ -10,9 +10,9 @@ const Registration = (props) => {
                 <label for="name">Name</label>
                 <input type="text" id="name"/>
                 <label for="email">E-mail</label>
-                <input type="text" id="email"/>
+                <input type="email" id="email"/>
                 <label for="password">Password</label>
-                <input type="text" id="password"/>
+                <input type="password" id="password"/>
             </div>
             <button className="textbox_button">
                 Registration

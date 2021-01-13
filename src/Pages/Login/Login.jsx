@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 const apiUrl = 'http://localhost:3000';
 
@@ -46,22 +46,6 @@ const Login =  (props) => {
         }
     }
 
-    // Postavka Cookie-a
-    const cookie_fj = async () => {
-
-        const requestOptions = {
-            method: 'GET',
-            headers: {withCredentials: true, credentials: 'include','Content-Type': 'application/json'},
-            body: JSON.stringify({
-                "name": "Haris",
-                "email": "htarahija12345@gmail.com",
-                "password": "hare11111"
-            })
-        };
-        const { data } = await axios.get(`${apiUrl}/posts`, {headers:requestOptions.headers});
-        console.log(data);
-    }
-
     // Logout
     const log__out = async () => {
 
@@ -95,7 +79,6 @@ const Login =  (props) => {
                 <p className="etf">Faculty of Electrical Engeneering</p>
                 <p className="dot">Department of Telecommunications</p>
             </div>
-            <button className="cookie" onClick={cookie_fj}>Cookies</button>
         </div>
     );
 }
