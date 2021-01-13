@@ -6,7 +6,7 @@ const Home = (props) => {
         <div className="Home_main">
             <div className="Buttons">
                 <Link to = "/login">
-                    <button classname="Login_Button">Login</button>
+                    <button className="Login_Button">Login</button>
                 </Link>
                 <Link to = "/registration">
                     <button className="Registration_Button">Registration</button>

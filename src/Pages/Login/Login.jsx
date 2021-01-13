@@ -1,10 +1,11 @@
-import React, { useEffect, onClick} from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, Route, useHistory } from 'react-router-dom';
 import axios from 'axios';
-
 const apiUrl = 'http://localhost:3000';
-axios.defaults.withCredentials = true;
 
+// Postavke
+
+axios.defaults.withCredentials = true;
 axios.interceptors.request.use(
     config => {
       const { origin } = new URL(config.url);
@@ -21,30 +22,33 @@ axios.interceptors.request.use(
 );
 
 const Login =  (props) => {
+    const history = useHistory();
 
-
-
+    // Login korisnika
     const Login_Backend = async () => {
-        var x = document.getElementById('name').value
         var y = document.getElementById('email').value
-        var y = document.getElementById('password').value
+        var z = document.getElementById('password').value
         const requestOptions = {
             method: 'POST',
             headers: {withCredentials: true, credentials: 'include','Content-Type': 'application/json'},
             body: JSON.stringify({
-                "name": "Haris",
-                "email": "htarahija12345@gmail.com",
-                "password": "hare11111"
+                "email": y,
+                "password": z
             })
         };
         const { data } = await axios.post(`${apiUrl}/login`, requestOptions.body, {headers:requestOptions.headers});
-        console.log(data)
         localStorage.setItem('token.data', data)
-        
-        // empty dependency array means this effect will only run once (like componentDidMount in classes)
+        console.log(data);
+        if(data.user.role === 'admin'){
+            history.push("/adminHome");
+        }else{
+            history.push("/userHome");
+        }
     }
 
-    const bilo_koja = async () => {
+    // Postavka Cookie-a
+    const cookie_fj = async () => {
+
         const requestOptions = {
             method: 'GET',
             headers: {withCredentials: true, credentials: 'include','Content-Type': 'application/json'},
@@ -55,23 +59,33 @@ const Login =  (props) => {
             })
         };
         const { data } = await axios.get(`${apiUrl}/posts`, {headers:requestOptions.headers});
-
+        console.log(data);
     }
 
+    // Logout
+    const log__out = async () => {
+
+        const requestOptions = {
+            method: 'GET',
+            headers: {withCredentials: true, credentials: 'include','Content-Type': 'application/json'},
+        };
+        const { data } = await axios.get(`${apiUrl}/logout`, {headers:requestOptions.headers});
+    }
+
+    // HTML
     return (
         <div className="Login_main">
             <div className="Textbox_main">
                 <div className="textbox_submain">
-                    <label hmtlFor="name">Name</label>
-                    <input type="text" id="name" />
-                    <label hmtlFor="email">E-mail</label>
-                    <input type="text" id="email" />
+                    <label htmlFor="email">E-mail</label>
+                    <input type="email" id="email" />
                     <label htmlFor="password">Password</label>
-                    <input type="text" id="password" />
+                    <input type="password" id="password" />
                 </div>
                 <button className="textbox_button" onClick={Login_Backend}>
                     Login
                 </button>
+                <button className="Log_out" onClick={log__out}>Log Out</button>
                 <Link to="/">
                     <button className="Back">Back</button>
                 </Link>
@@ -81,7 +95,7 @@ const Login =  (props) => {
                 <p className="etf">Faculty of Electrical Engeneering</p>
                 <p className="dot">Department of Telecommunications</p>
             </div>
-            <button className="cookie" onClick={bilo_koja}>Cookies</button>
+            <button className="cookie" onClick={cookie_fj}>Cookies</button>
         </div>
     );
 }
