@@ -28,12 +28,29 @@
     flex-direction: column;
     margin-bottom: 10px;
 }
+.mail label{
+    margin-bottom: 4px;
+}
+.pw label{
+    margin-bottom: 4px;
+}
+.mail input{
+    border: 1px solid #FAFAFA;
+    border-radius: 4px;
+    width: 100%;
+    transition: ease-in-out, width .5s ease-in-out;
+}
+.pw input{
+    border: 1px solid #FAFAFA;
+    border-radius: 4px;
+}
+
 
 .Buttoni{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 8px;
+    margin-top: 32px;
 }
 
 .textbox_button{
@@ -49,6 +66,11 @@
     transition-duration: 0.6s;
     border-radius: 4px;
 }
+.textbox_button:hover {
+    background-color: #16A085; /* Green */
+    color:#FAFAFA;
+    border-radius: 8px;
+}
 .Log_out{
     margin-right: 20px;
     background-color: #FAFAFA;
@@ -62,7 +84,12 @@
     transition-duration: 0.6s;
     border-radius: 4px;
 }
-.Back{
+.Log_out:hover {
+    background-color: #16A085; /* Green */
+    color:#FAFAFA;
+    border-radius: 8px;
+}
+.Backa{
     background-color: #FAFAFA;
     border: none;
     padding: 6px 12px;
@@ -74,25 +101,8 @@
     transition-duration: 0.6s;
     border-radius: 4px;
 }
-
-.textbox_button:hover {
+.Backa:hover {
     background-color: #16A085; /* Green */
     color:#FAFAFA;
     border-radius: 8px;
-    padding: 5px 11px;
-    border: 1px solid #FAFAFA;
-}
-.Log_out:hover {
-    background-color: #16A085; /* Green */
-    color:#FAFAFA;
-    border-radius: 8px;
-    padding: 5px 11px;
-    border: 1px solid #FAFAFA;
-}
-.Back:hover {
-    background-color: #16A085; /* Green */
-    color:#FAFAFA;
-    border-radius: 8px;
-    padding: 5px 11px;
-    border: 1px solid #FAFAFA;
 }

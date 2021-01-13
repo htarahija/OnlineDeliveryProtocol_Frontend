@@ -76,7 +76,7 @@ const Login =  (props) => {
                     </button>
                     <button className="Log_out" onClick={log__out}>Log Out</button>
                     <Link to="/">
-                        <button className="Back">Back</button>
+                        <button className="Backa">Back</button>
                     </Link>
                 </div>
             </div>

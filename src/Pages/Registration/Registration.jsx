@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Registration.css'; 
 
 
 async function loginUser(credentials) {
@@ -35,35 +36,38 @@ const Registration = (props) => {
 
     return (
         <div className="login-wrapper">
-            <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Name</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)} />
-                </label>
-                <label>
-                    <p>Email</p>
-                    <input type="email" onChange={e => setPassword(e.target.value)} />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setEmail(e.target.value)} />
-                </label>
-                <label>
-                    <p>Role</p>
-                    <input type="text" onChange={e => setRole(e.target.value)} />
-                </label>
-                <div>
-                    <button type="submit">Submit</button>
+            <form className="texbox_reg_main" onSubmit={handleSubmit}>
+                <div className="textbox_reg_submain">
+                    <div className="reg_name">
+                        <label htmlFor="text">Name</label>
+                        <input type="text" onChange={e => setUserName(e.target.value)} />
+                    </div>
+                    <div className="reg_email">
+                        <label htmlFor="email">E-mail</label>
+                        <input type="email" onChange={e => setPassword(e.target.value)} />
+                    </div>
+                    <div className="reg_pw">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" onChange={e => setEmail(e.target.value)} />
+                    </div>
+                    <div className="reg_role">
+                        <label htmlFor="text">Role</label>
+                        <input type="text" onChange={e => setRole(e.target.value)} />
+                    </div>                    
                 </div>
             </form>
-            <Link to="/">
-                <button className="Back">Back</button>
-            </Link>
+            <div className="reg_buttons">
+                    <button type="submit" className="submit">Submit</button>
+                    <Link to="/">
+                        <button className="Back">Back</button>
+                    </Link>
+            </div>
             <div className="Text_main">
                 <h2 className="sdp">SOFTVERSKI DIZAJN PROTOKOLA</h2>
-                <p className="etf">Faculty of Electrical Engeneering</p>
-                <p className="dot">Department of Telecommunications</p>
+                <div className="instituions">
+                    <p className="etf">Faculty of Electrical Engeneering</p>
+                    <p className="dot">Department of Telecommunications</p>
+                </div>
             </div>
         </div>
     )
