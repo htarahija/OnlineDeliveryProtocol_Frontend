@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Registration from './Pages/Registration/Registration';
 import AdminHome from './Pages/AdminHome/AdminHome';
+import UserHome from './Pages/UserHome/UserHome';
 
 
 
@@ -22,6 +23,8 @@ function App() {
           <Route path='/login' component={Login}/>
           <Route path='/registration' component={Registration}/>
           <Route path='/adminHome' component={AdminHome}/>
+          <Route path='/userHome' component={UserHome}/>
+
       </Switch>
     </Router>
   );
