@@ -1,0 +1,85 @@
+
+.Home_main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FAFAFA;
+}
+
+.Buttons{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Login_Button{
+    margin-right: 20px;
+    background-color: #16A085;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+}
+.Registration_Button{
+    background-color: none;
+    border: 1px solid #16A085;    padding: 15px 32px;
+    color:  #16A085;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+}
+.Text_main{
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.instituions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sdp{
+    margin-bottom: 4%;
+}
+
+.etf{
+    margin-right: 20px;
+}
+
+.dot{
+    margin-left: 20px;
+}
+
+
+.Registration_Button:hover {
+    background-color: #16A085; /* Green */
+    color:white;
+    border-radius: 8px;
+  }
+
+.Login_Button:hover {
+    padding: 14px 32px;
+    background-color: white;
+    color: #16A085;
+    border: 1px solid #16A085;    
+    padding: 15px 32px;
+    border-radius: 8px;
+}
+  
