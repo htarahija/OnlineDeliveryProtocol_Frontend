@@ -30,6 +30,7 @@ const Registration = (props) => {
             role
         });
         console.log(response)
+        console.log("OK")
     }
 
     return (
